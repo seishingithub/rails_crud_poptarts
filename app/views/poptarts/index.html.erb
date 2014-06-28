@@ -15,7 +15,7 @@
 <% @poptarts.each do |poptart| %>
   <ul>
     <li>
-      <%= poptart.flavor %>
+      <%= link_to poptart.flavor, poptart_path(poptart) %>
       <br>
       <%= poptart.topping %>
     </li>

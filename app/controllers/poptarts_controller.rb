@@ -14,6 +14,21 @@ class PoptartsController < ApplicationController
     end
   end
 
+  def show
+    @poptart = Poptart.find(params[:id])
+  end
+
+  def edit
+    @poptart = Poptart.find(params[:id])
+  end
+
+  def update
+    @poptart = Poptart.find(params[:id])
+    @poptart.update_attributes!(poptart_params)
+
+    redirect_to poptarts_path
+  end
+
   private
   def poptart_params
     params.require(:poptart).permit(:flavor, :topping)
