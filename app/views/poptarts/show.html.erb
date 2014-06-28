@@ -6,4 +6,5 @@
   </li>
 </ul>
 
-<%= link_to 'Edit', edit_poptart_path %>
+<%= link_to 'Edit', edit_poptart_path(@poptart) %>
+<%= link_to 'Delete', poptart_path(@poptart), method: :delete %>

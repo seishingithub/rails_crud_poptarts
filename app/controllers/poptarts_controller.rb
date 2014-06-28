@@ -29,6 +29,12 @@ class PoptartsController < ApplicationController
     redirect_to poptarts_path
   end
 
+  def destroy
+    @poptart = Poptart.find(params[:id]).delete
+
+    redirect_to poptarts_path
+  end
+
   private
   def poptart_params
     params.require(:poptart).permit(:flavor, :topping)

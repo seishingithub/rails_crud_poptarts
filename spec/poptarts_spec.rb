@@ -30,4 +30,20 @@ feature 'Manage Poptarts' do
     expect(page).to have_content 'cinnamon'
     expect(page).to have_content 'brown sugar'
   end
+
+  scenario 'User can delete poptarts from list' do
+    visit '/'
+    click_on 'Add Poptarts'
+    fill_in 'Flavor', with: 'blueberry'
+    fill_in 'Topping', with: 'icing'
+    click_on 'Create Poptarts'
+    expect(page).to have_content 'blueberry'
+    expect(page).to have_content 'icing'
+    click_on 'blueberry'
+    expect(page).to have_content 'blueberry'
+    expect(page).to have_content 'icing'
+    click_on 'Delete'
+    expect(page).to have_no_content 'blueberry'
+    expect(page).to have_no_content 'icing'
+  end
 end
