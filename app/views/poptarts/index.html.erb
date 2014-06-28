@@ -1,0 +1,23 @@
+<%= form_for @poptart do |f| %>
+  <p>
+    <%= f.label :flavor %>
+    <%= f.text_field :flavor %>
+  </p>
+  <p>
+    <%= f.label :topping %>
+    <%= f.text_field :topping %>
+  </p>
+  <p>
+    <%= f.submit 'Create Poptarts' %>
+  </p>
+<% end %>
+
+<% @poptarts.each do |poptart| %>
+  <ul>
+    <li>
+      <%= poptart.flavor %>
+      <br>
+      <%= poptart.topping %>
+    </li>
+  </ul>
+<% end %>
